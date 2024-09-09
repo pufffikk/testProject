@@ -5,13 +5,15 @@
 import sys
 import requests
 
+from rich.console import Console
+from rich.markdown import Markdown
 
+console = Console()
 def main():
     args = sys.argv[-1]
     #var = input()
     resp = requests.get(args)
-    print(resp.text)
-
+    console.print(Markdown(resp.text))
 
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
@@ -21,3 +23,5 @@ def print_hi(name):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     main()
+
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
